@@ -45,19 +45,18 @@
   ),
 )
 
-#show: article.with(  
+#show: thesis.with(  
   title: [Title of the dissertation\ Can be broken into two lines],
   subtitle: "Complementary subtitle, not more than two lines long",
   author: "Author's complete name",
-  lang: "pt",
+  
   logo-path: "assets/brasao_UFSC_vertical_sigla.svg",
   institution: [
    Federal University of Santa Catarina\
    Technology Center\
    Automation and Systems Engineering\
    Undergraduate Course in Control and Automation engineering
-  ],
-  address: ("Florianópolis", "Santa Catarina", "Brazil"),
+  ],  
   contributors: (
    ("Prof. XXXXXX, Dr.", "Advisor", "UFSC/CTC/DAS"),
    ("XXXXXX, Eng.", "Supervisor", "Company/University XXXX"),
@@ -67,28 +66,41 @@
   ),
   cont-in-description: (0, 1),
   cont-in-board: (0, 1, 2, 3),
+  
+  address: ("Florianópolis", "Santa Catarina", "Brazil"),
   description: [Final report of the subject DAS5511 (Course Final Project) as a Concluding Dissertation of the Undergraduate Course in Control and Automation Engineering of the Federal University of Santa Catarina.],
-  dedicatory: [This work is dedicated to my classmates and my dear parants.],
-  epigraph: [
-   "Text of the epigraph.\
-    Citation related to the theme of the work.\
-    It is optional. The epigraph may also appear\
-    at the beginning of each section or chapter.\
-    It must be prepared in accordance with NBR 10520."\
-    (SURNAME of the author of the epigraph, year)
-  ],
-  disclaimer: (
-    "<Fulano de Tal>",
-    "<Instituição de realização do PFC>",
-    "<Cidade da assinatura>",
-    datetime.today(),
-    [As representative of the \<PFC institution of execution\> in which the present work was carried out, I declare this document to be exempt from any confidential or sensitive content regarding intellectual property, that may keep it from being published by the Federal University of Santa Catarina (UFSC) to the general public, including its online availability in the Institutional Repository of the University Library (BU). Furthermore, I attest knowledge of the obligation by the author, as a student of UFSC, to deposit this document in the said Institutional Repository, for being it a Final Program Dissertation ("Trabalho de Conclusão de Curso" ), in accordance with the Resolução Normativa n° 126/2019/CUn.]),
+  evaluation: [This dissertation was evaluated in the context of the subject DAS5511 (Course Final Project) and approved in its final form by the Undergraduate Course in Control and Automation Engineering],
+
+  lang: "pt",
 )
+
+#dedicatory[
+  This work is dedicated to my classmates and my dear parants.
+]
 
 #acknowledgments[
   I would like to express my gratitude to the team of Typst (Martin Haug, Laurenz Mädje, Ana Gelez and all contributors) for developing a modern typesetting system that made this template possible.
 
   Their work has enabled a streamlined, efficient workflow and laid the foundation upon which this project builds.
+]
+
+#epigraph[
+  \"Text of the epigraph.\
+  Citation related to the theme of the work.\
+  It is optional. The epigraph may also appear\
+  at the beginning of each section or chapter.\
+  It must be prepared in accordance with NBR 10520."\
+  (SURNAME of the author of the epigraph, year)
+]
+
+#disclaimer(
+  place: "<Cidade da assinatura>",
+  signer: "<Fulano de Tal>",
+  institution: "<Instituição de realização do PFC>",
+  date: datetime.today(),
+  lang: "en",
+)[
+  As representative of the \<PFC institution of execution\> in which the present work was carried out, I declare this document to be exempt from any confidential or sensitive content regarding intellectual property, that may keep it from being published by the Federal University of Santa Catarina (UFSC) to the general public, including its online availability in the Institutional Repository of the University Library (BU). Furthermore, I attest knowledge of the obligation by the author, as a student of UFSC, to deposit this document in the said Institutional Repository, for being it a Final Program Dissertation ("_Trabalho de Conclusão de Curso_"), in accordance with the Resolução Normativa n° 126/2019/CUn.
 ]
 
 #abstract(lang: "en")[
@@ -162,9 +174,13 @@
 
   = Test
 
-  test
+  #lorem(100)
 
   = Test 2
 
+  #lorem(100)
+
   == 3
+
+  #lorem(100)
 ]

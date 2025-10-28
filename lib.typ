@@ -17,55 +17,54 @@
 
 #let noindent = par.with(first-line-indent: 0pt)
 
-#let article(
+#let thesis(
+  // content / identity
   title: none,
   subtitle: none,
-  author: none, // main author's full name
-  contributors: none, // array of (<name with titles>, <role>, <origin>)
+  author: none,
+  contributors: none,
   cont-in-board: none,
   cont-in-description: none,
-  abstract: none,
-  foreign-abstract: none,
-  acknowledgments: none,
-  dedicatory: none,
-  epigraph: none,
-  disclaimer: none,
   institution: none,
+  address: none,
+  description: none,
+  logo-path: none,
+  evaluation: none,
   date: auto,
-  paper: "a4",
+
+  // document-level
   lang: "en",
   lang-data: toml("assets/lang.toml"),
-  justify: true,
-  line-space: 0.75em,
-  par-margin: 0.75em,
+  paper: "a4",
   margin: (
     top: 3cm,
     left: 3cm,
     bottom: 2cm,
     right: 2cm
   ),
-  list-spacing: 1em,
-  use-serif: false,
+
+  // visual / typography
   fonts: (sans: "TeX Gyre Heros", serif: "TeX Gyre Termes", math-sans: "New Computer Modern Sans Math", math-serif: "TeX Gyre Termes Math"),
+  use-serif: false,
   font-size: 12pt,
-  logo-path: none,
-  address: none,
-  description: none,
-  acronyms-abbrev: (),
-  symbols: (),
-  show-all-acronyms-abbrev: false,
-  show-all-symbols: false,
+  line-space: 0.75em,
+  par-margin: 0.75em,
+  list-spacing: 1em,
+  justify: true,
+
   body
 ) = {
-  // Configure the glossary
   show: make-glossary
-  
+
   lang-data-state.update(lang-data)
-  
-  // Reqired arguments.
+
+  // Required arguments
+  assert(title != none, message: "Title is required")
   assert(author != none, message: "Author name is required")
   assert(institution != none, message: "Institution name is required")
-  assert(address != none, message: "Address must be provided")
+  assert(address != none, message: "Address must be provided as (<city>, <state/province>, <country>)")
+  assert(description != none, message: "A description is required")
+  assert(evaluation != none, message: "An evaluation text is required")
 
   let font = if use-serif { fonts.serif } else { fonts.sans }
 
@@ -76,7 +75,6 @@
       text(font: fonts.math-sans, it)
     }
   }
-  
 
   assert(description != none)
 
@@ -85,15 +83,13 @@
     date = datetime.today()
   }
 
-  // Joins title and subtitle, if any:
   let full-title = if subtitle != none {
     upper(strong(title)) + ":\n" + subtitle
   }
   else {
     upper(strong(title))
   }
-  
-  // If more than one author, set doc author as "MAIN AUTHOR et al."
+
   set document(
     title: full-title,
     author: author,
@@ -114,10 +110,10 @@
     size: font-size,
     lang: lang,
   )
-  
+
   set terms(separator: [: ], tight: true)
   set heading(numbering: "1.1.1.1.1 ")
-  
+
   show figure.caption: set text(size: 1em - 2pt)
   show figure: set figure.caption(position: top)
   show footnote.entry: set text(size: font-size - 2pt)
@@ -162,11 +158,10 @@
       ),
     align: left
   )
-  
+
   show math.equation.where(block: true): set align(center)
   set math.equation(numbering: (..nums) => numbering("(1)", ..nums))
 
-  
   show quote.where(block: true): it => pad(left: 7cm - margin.left, it)
   show raw.where(block: true): it => pad(left: 1em, it)
 
@@ -204,20 +199,11 @@
       #set text(weight: "regular")
       #(it.body)
     ]
-    
+
     author
-  
     v(3fr)
-  
-    heading(
-      level: 1,
-      outlined: false,
-      numbering: none,
-      align(center)[#full-title]
-    )
-  
+    full-title
     v(2fr)
-  
     align(right,
       block(width: 50%)[
         #set align(left)
@@ -227,54 +213,30 @@
           #let cont = contributors.at(index)
           \
           *#cont.at(1):* #cont.at(0)
-        ]
-      ]
-    )
-  
+    ]])
     v(2fr)
-  
-    [ 
-      #address.at(0) \
-      #date.year()
-    ]
-  }
-
-  pagebreak()
-
-  {
-    [TODO: FICHA CATALOGRÁFICA]
+    [#address.at(0) \ #date.year()]
   }
 
   pagebreak()
 
   [
     #set align(center)
-    
-    #author
 
+    #author
     #v(1em)
-    
     #full-title
     #v(2em)
 
-    #block(inset: (left: 5%, right: 5%))[
-      #set par(justify: false)
-      This dissertation was evaluated in the context of the subject DAS5511 (Course Final Project) and approved in its final form by the Undergraduate Course in Control and Automation Engineering
-    ]
+    #set par(justify: false)
+    #evaluation
 
     #v(2em)
 
-    // TODO Maybe there's a better way to do this than to use icu-datetime, which is very heavy
     #address.at(0), #icu.fmt(date, locale: lang, length: "long").
 
     #v(1em) \
 
-    #let non-board = {
-      let indices = ()
-      
-      indices
-    }
-    
     #for i in range(contributors.len()) {
       if i not in cont-in-board {
         let n = contributors.at(i)
@@ -284,8 +246,8 @@
           #v(1em)
         ]
       }
-    } 
-    
+    }
+
     *#linguify("board", from: lang-data):*
 
     #for b in cont-in-board [
@@ -298,108 +260,6 @@
 
   pagebreak()
 
-  if dedicatory != none {
-    set align(bottom + right)
-
-    block(width: 65%, dedicatory)
-    
-    pagebreak()
-  }
-
-  {
-    // Acknowledgments
-    // Fallback to argument when command not used
-    context if article-acknowledgments-state.final() == none {
-      if acknowledgments != none {
-        article-acknowledgments-state.update(acknowledgments)
-      }
-    }
-    // Shows acknowledgments only if whether command or aegument is provided
-    context if article-acknowledgments-state.final() != none {
-      pagebreak(weak: true)
-      
-      let thanks = article-acknowledgments-state.final()
-      
-      heading(
-        level: 1,
-        outlined: false,
-        numbering: none,
-        align(center, upper(linguify("acknowledgments", from: lang-data)))
-      )
-      
-      thanks
-    }
-  }
-
-  pagebreak()
-
-  if epigraph != none {
-    set align(bottom + right)
-    set par(justify: false)
-    block(width: 70%, emph(epigraph))
-    pagebreak()
-  }
-
-  if disclaimer != none {
-    set par(first-line-indent: 1.5cm)
-    
-    heading(
-      level: 1,
-      numbering: none,
-      outlined: false,
-      upper(linguify("disclaimer", from: lang-data))
-    )
-
-    
-    [#disclaimer.at(2), #icu.fmt(disclaimer.at(3), locale: lang, length: "long")]
-    par(disclaimer.at(4))
-
-    v(2cm)
-
-    align(center)[
-      #line(length: 30%, stroke: 0.8pt)
-      #disclaimer.at(0) \
-      #disclaimer.at(1)
-    ]
-
-    pagebreak()
-  }
-
-  // Foreign abstract, if any.
-  // Fallback to command if foreign-abstract argument not set:
-  context {
-    let fa = if foreign-abstract == none {
-      article-abstract-state.final().at("foreign", default: none)
-    } else {
-      foreign-abstract
-    }
-
-    if fa != none {
-      assert(lang-foreign != none, message: "To add a foreign abstract, first specify `lang-foreign`")
-
-      set text(lang: lang-foreign)
-      show heading: set align(center)
-      // Foreign abstract title, in foreign language:
-      heading(
-        level: 1,
-        numbering: none,
-        outlined: false,
-        upper(linguify("abstract", from: lang-data))
-      )
-
-      fa
-      pagebreak()
-    }
-  }
-
-  // List of figures
-  
-  // List of abbreviations and acronyms
-  // List of symbols
-
-  // Contents (Table of Contents)
-
-  // Add headers with current chapter and page numbers
   set page(
     header: context {
       set par(first-line-indent: 0pt)
@@ -413,7 +273,7 @@
       if not summary-end {
         return
       }
-      
+
       hydra(level, display: (ctx,cont) => {
         let numberingH(c) = {
           return numbering(c.numbering,..counter(heading).at(c.location()))
@@ -445,11 +305,80 @@
       )
     }
   )
-  
-  // Set ABNT-compliant bibliography
+
   set bibliography(style: "associacao-brasileira-de-normas-tecnicas")
 
   body
+}
+
+
+#let dedicatory(body) = {
+  set align(bottom + right)
+  
+  pagebreak(weak: true)
+  block(width: 65%, body)
+  pagebreak()
+}
+
+// Thank and recognize the role of important people in the making of the document.
+#let acknowledgments(
+  thanks
+) = context {
+  pagebreak(weak: true)
+  
+  heading(
+    level: 2,
+    outlined: false,
+    numbering: none,
+    align(center, upper(linguify("acknowledgments", from: lang-data-state.final())))
+  )
+  
+  thanks
+  pagebreak()
+}
+
+#let epigraph(body) = {
+  set align(bottom + right)
+  set par(justify: false)
+
+  pagebreak(weak: true)
+  block(width: 70%, emph(body))
+  pagebreak()
+}
+
+#let disclaimer(
+  place: none,
+  date: none,
+  signer: none,
+  institution: none,
+  lang: none,
+  body
+) = context {
+  set par(first-line-indent: 1.5cm)
+  
+  heading(
+    level: 2,
+    numbering: none,
+    outlined: false,
+    upper(linguify("disclaimer", from: lang-data-state.final()))
+  )
+
+  let lang = lang
+  if lang == none {
+    lang = text.lang
+  }
+  
+  [#place, #icu.fmt(date, locale: lang, length: "long")]
+  v(1cm)
+  text(lang: lang, body)
+  v(2cm)
+  align(center)[
+    #line(length: 30%, stroke: 0.8pt)
+    #signer \
+    #institution
+  ]
+
+  pagebreak()
 }
 
 #let abstract(
@@ -458,6 +387,8 @@
 ) = context {
   show heading: set  align(center)
   set text(lang: lang)
+
+  pagebreak(weak: true)
   
   heading(
     level: 2,
@@ -465,7 +396,7 @@
     outlined: false,
     upper(linguify("abstract", from: lang-data-state.final()))
   )
-  
+
   body
   pagebreak()
 }
@@ -712,14 +643,6 @@
   )
   
   annex
-}
-
-
-// Thank and recognize the role of important people in the making of the document.
-#let acknowledgments(
-  thanks
-) = context {
-  article-acknowledgments-state.update(thanks)
 }
 
 // Shadows the figure command to introduce the `source` argument to it.

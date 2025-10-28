@@ -1,3 +1,5 @@
+#import "@local/ufsc-thesis:0.1.0": *
+
 = Conclusão
 
 *Instruções da Coordenação do @pfc:*

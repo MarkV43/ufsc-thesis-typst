@@ -1,4 +1,4 @@
-#import "../lib.typ": *
+#import "@local/ufsc-thesis:0.1.0": *
 
 = Demais Seções (Capítulos)
 

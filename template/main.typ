@@ -1,6 +1,4 @@
-#import "@preview/ufsc-thesis:0.1.0": *
-
-// #include "test.typ"
+#import "@local/ufsc-thesis:0.1.0": *
 
 #let acronyms = (
   (
@@ -50,7 +48,7 @@
   subtitle: "Complementary subtitle, not more than two lines long",
   author: "Author's complete name",
   
-  logo-path: "assets/brasao_UFSC_vertical_sigla.svg",
+  logo: image("assets/brasao_UFSC_vertical_sigla.svg", width: 5em),
   institution: [
    Federal University of Santa Catarina\
    Technology Center\

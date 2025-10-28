@@ -28,7 +28,7 @@
   institution: none,
   address: none,
   description: none,
-  logo-path: none,
+  logo: none,
   evaluation: none,
   date: auto,
 
@@ -177,8 +177,8 @@
   {
     show: align.with(center)
 
-    if logo-path != none {
-      align(center)[#image(logo-path,width:5em)]
+    if logo != none {
+      align(center)[#logo]
     }
 
     upper(institution)

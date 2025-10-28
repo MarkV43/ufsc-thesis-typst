@@ -1,0 +1,12 @@
+[package]
+name = "ufsc-thesis"
+version = "0.1.0"
+entrypoint = "lib.typ"
+categories = [ "thesis", "layout" ]
+disciplines = [ "engineering", "education" ]
+description = "An ABNT-compliant thesis and dissertation template for works at UFSC"
+
+[template]
+path = "template"
+entrypoint = "main.typ"
+thumbnail = ""

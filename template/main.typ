@@ -1,4 +1,4 @@
-#import "lib.typ": *
+#import "@preview/ufsc-thesis:0.1.0": *
 
 // #include "test.typ"
 

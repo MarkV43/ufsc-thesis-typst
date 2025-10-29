@@ -1,4 +1,4 @@
-#import "@local/ufsc-thesis:0.1.3": *
+#import "@preview/ufscholar:0.1.3": *
 
 = Desenvolvimento
 
@@ -41,30 +41,30 @@ Na @tab:formatacao-texto estão as especificações para a formatação do texto
     stroke: black.lighten(30%) + 0.6pt,
 
     table.header([Objeto], [Regra]),
-    
+
     [Formato do papel], [A4],
-    
+
     [Impressão],
     [A norma recomenda que caso seja necessário imprimir, deve-se utilizar a frente e o verso da página.],
-    
+
     [Margens],
     [Superior: 3, Inferior: 2, Interna: 3 e Externa: 2. Usar margens espelhadas quando o trabalho for impresso.],
-    
+
     [Paginação],
     [As páginas dos elementos pré-textuais devem ser contadas, mas não numeradas. Para trabalhos digitados somente no anverso, a numeração das páginas deve constar no canto superior direito da página, a 2 cm da borda, figurando a partir da primeira folha da parte textual. Para trabalhos digitados no anverso e no verso, a numeração deve constar no canto superior direito, no anverso, e no canto superior esquerdo no verso.],
-  
+
     [Espaçamento],
     [O texto deve ser redigido com espaçamento entre linhas 1,5, excetuando-se as citações de mais de três linhas, notas de rodapé, referências, legendas das ilustrações e das tabelas, e a natureza (tipo do trabalho, objetivo, nome da instituição a que é submetido e área de concentração), que devem ser digitados em espaço simples, com fonte menor. As referências devem ser separadas entre si por um espaço simples em branco.],
-  
+
     [Paginação],
     [A contagem inicia na folha de rosto, mas se insere o número da página a partir da introdução até o final do trabalho.],
-  
+
     [Fontes sugeridas],
     [Arial ou Times New Roman.],
-  
+
     [Tamanho da fonte],
     [Fonte tamanho 12 para o texto, incluindo os títulos das seções e subseções. As citações com mais de três linhas, notas de rodapé, paginação, dados internacionais de catalogação, legendas e fontes das ilustrações e das tabelas devem ser de tamanho menor. Adotamos, neste template, fonte tamanho 10.],
-  
+
     [Nota de rodapé],
     [Devem ser digitadas dentro da margem, ficando separadas por um espaço simples entre as linhas e por filete de 5 cm a partir da margem esquerda. A partir da segunda linha, devem ser alinhadas abaixo da primeira letra da primeira palavra da primeira linha.],
   )
@@ -125,7 +125,7 @@ De acordo com *ibge1993*, tabela é uma forma não discursiva de apresentar info
     [2 734],
     [3 082],
 
-    [Parintins (AM)], 
+    [Parintins (AM)],
     [102 033],
     [102 033],
     [0,675],

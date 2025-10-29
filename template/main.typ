@@ -1,4 +1,4 @@
-#import "@local/ufsc-thesis:0.1.3": *
+#import "@preview/ufscholar:0.1.3": *
 
 #let acronyms = (
   (
@@ -43,18 +43,18 @@
   ),
 )
 
-#show: thesis.with(  
+#show: thesis.with(
   title: [Title of the dissertation\ Can be broken into two lines],
   subtitle: "Complementary subtitle, not more than two lines long",
   author: "Author's complete name",
-  
+
   logo: image("assets/brasao_UFSC_vertical_sigla.svg", width: 5em),
   institution: [
    Federal University of Santa Catarina\
    Technology Center\
    Automation and Systems Engineering\
    Undergraduate Course in Control and Automation engineering
-  ],  
+  ],
   contributors: (
    ("Prof. XXXXXX, Dr.", "Advisor", "UFSC/CTC/DAS"),
    ("XXXXXX, Eng.", "Supervisor", "Company/University XXXX"),
@@ -64,7 +64,7 @@
   ),
   cont-in-description: (0, 1),
   cont-in-board: (0, 1, 2, 3),
-  
+
   address: ("Florianópolis", "Santa Catarina", "Brazil"),
   description: [Final report of the subject DAS5511 (Course Final Project) as a Concluding Dissertation of the Undergraduate Course in Control and Automation Engineering of the Federal University of Santa Catarina.],
   evaluation: [This dissertation was evaluated in the context of the subject DAS5511 (Course Final Project) and approved in its final form by the Undergraduate Course in Control and Automation Engineering],
@@ -132,7 +132,7 @@
   as palavras-chave, antecedidas da expressão Palavras-chave, seguida de
   dois-pontos, separadas entre si por ponto e vírgula e finalizadas por ponto,
   em letras minúsculas exceto substantivos próprios e nomes científicos.
-  
+
   *Palavras-chave*: artigo; exemplo de artigo; resumo; ABNT; norma brasileira.
 ]
 

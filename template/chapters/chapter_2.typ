@@ -1,147 +1,146 @@
-#import "@preview/ufscholar:0.1.3": *
+#import "../imports.typ": *
 
-= Desenvolvimento
+= Development
 
-*Instruções do padrão genérico de @tcc:pl da BU:*
+*Generic standard instructions from the @tcc:pl of the University Library:*
 
-Deve-se inserir texto entre as seções.
+Text must be inserted between sections.
 
-== Exposição do tema ou matéria
+== Presentation of the subject or topic
 
-É a parte principal e mais extensa do trabalho. Deve apresentar a fundamentação teórica, a metodologia, os resultados e a discussão. Divide-se em seções e subseções conforme a NBR 6024 (*NBR6024:2012*).
+This is the main and most extensive part of the work. It should present the theoretical foundation, methodology, results, and discussion. It is divided into sections and subsections according to NBR 6024 (*NBR6024:2012*).
 
-Quanto à sua estrutura e projeto gráfico, segue as recomendações da @abnt para preparação de trabalhos acadêmicos, a NBR 14724, de 2011 (*NBR14724:2011*).
+Regarding its structure and graphic design, it follows the @abnt recommendations for the preparation of academic works, NBR 14724, from 2011 (*NBR14724:2011*).
 
 #figure(
   label: "fig:elementos-trabalho",
-  source: "Universidade Federal do Paraná (1996)",
-  caption: "Elementos do trabalho acadêmico",
+  source: "Federal University of Paraná (1996)",
+  caption: "Elements of the academic work",
 )[
   #image("../assets/images/elements-trabalho-academico.png", width: 70%)
 ]
 
-=== Formatação do texto
+=== Text formatting
 
-No que diz respeito à estrutura do trabalho, recomenda-se que:
+Regarding the structure of the work, it is recommended that:
 
-+ o texto deve ser justificado, digitado em cor preta, podendo utilizar outras cores somente para as ilustrações;
-+ utilizar papel branco ou reciclado para impressão;
-+ os elementos pré-textuais devem iniciar no anverso da folha, com exceção da ficha catalográfica ou ficha de identificação da obra;
-+ os elementos textuais e pós-textuais devem ser difitados no anverso e verso das folhas, quando o trabalho for impresso. As seções primárias devem começar sempre em páginas ímpares, quando o trabalho for impresso. Deixar um espaço entre o título da seção/subseção e o texto e entre o texto e o título da subseção.
++ the text should be justified, typed in black, with other colors used only in illustrations;
++ white or recycled paper should be used for printing;
++ the preliminary elements must begin on the front side of the sheet, except for the catalog card or work identification card;
++ the textual and post-textual elements must be typed on both sides of the pages when the work is printed. Primary sections should always start on odd-numbered pages when printed. Leave a space between the title of the section/subsection and the text, and between the text and the following subsection title.
 
-Na @tab:formatacao-texto estão as especificações para a formatação do texto.
-
+Table @tab:formatacao-texto shows the text formatting specifications.
 
 #figure(
   label: "tab:formatacao-texto",
-  caption: [Formatação do texto.],
+  caption: [Text formatting.],
   source: [*NBR14724:2011*],
   table(
     columns: 2,
     stroke: black.lighten(30%) + 0.6pt,
 
-    table.header([Objeto], [Regra]),
+    table.header([Item], [Rule]),
 
-    [Formato do papel], [A4],
+    [Paper format], [A4],
 
-    [Impressão],
-    [A norma recomenda que caso seja necessário imprimir, deve-se utilizar a frente e o verso da página.],
+    [Printing],
+    [The standard recommends that, if printing is necessary, both sides of the page should be used.],
 
-    [Margens],
-    [Superior: 3, Inferior: 2, Interna: 3 e Externa: 2. Usar margens espelhadas quando o trabalho for impresso.],
+    [Margins],
+    [Top: 3 cm, Bottom: 2 cm, Inner: 3 cm, and Outer: 2 cm. Use mirrored margins when the work is printed.],
 
-    [Paginação],
-    [As páginas dos elementos pré-textuais devem ser contadas, mas não numeradas. Para trabalhos digitados somente no anverso, a numeração das páginas deve constar no canto superior direito da página, a 2 cm da borda, figurando a partir da primeira folha da parte textual. Para trabalhos digitados no anverso e no verso, a numeração deve constar no canto superior direito, no anverso, e no canto superior esquerdo no verso.],
+    [Pagination],
+    [The pages of the preliminary elements must be counted but not numbered. For works printed only on the front side, the page number should appear in the upper right corner, 2 cm from the edge, starting from the first page of the textual part. For double-sided works, numbering should appear in the upper right corner on the front side and upper left on the back side.],
 
-    [Espaçamento],
-    [O texto deve ser redigido com espaçamento entre linhas 1,5, excetuando-se as citações de mais de três linhas, notas de rodapé, referências, legendas das ilustrações e das tabelas, e a natureza (tipo do trabalho, objetivo, nome da instituição a que é submetido e área de concentração), que devem ser digitados em espaço simples, com fonte menor. As referências devem ser separadas entre si por um espaço simples em branco.],
+    [Line spacing],
+    [The text should be written with 1.5 line spacing, except for quotations longer than three lines, footnotes, references, captions of illustrations and tables, and the nature of the work (type of work, objective, name of the institution, and area of concentration), which should be in single spacing and smaller font size. References should be separated by a single blank line.],
 
-    [Paginação],
-    [A contagem inicia na folha de rosto, mas se insere o número da página a partir da introdução até o final do trabalho.],
+    [Pagination],
+    [Counting starts on the title page, but page numbering appears only from the introduction to the end of the work.],
 
-    [Fontes sugeridas],
-    [Arial ou Times New Roman.],
+    [Suggested fonts],
+    [Arial or Times New Roman.],
 
-    [Tamanho da fonte],
-    [Fonte tamanho 12 para o texto, incluindo os títulos das seções e subseções. As citações com mais de três linhas, notas de rodapé, paginação, dados internacionais de catalogação, legendas e fontes das ilustrações e das tabelas devem ser de tamanho menor. Adotamos, neste template, fonte tamanho 10.],
+    [Font size],
+    [Font size 12 for the text, including section and subsection titles. Quotations longer than three lines, footnotes, pagination, cataloging data, and captions of illustrations and tables should be in a smaller font. In this template, font size 10 is used.],
 
-    [Nota de rodapé],
-    [Devem ser digitadas dentro da margem, ficando separadas por um espaço simples entre as linhas e por filete de 5 cm a partir da margem esquerda. A partir da segunda linha, devem ser alinhadas abaixo da primeira letra da primeira palavra da primeira linha.],
+    [Footnotes],
+    [They should be typed within the margin, separated by a single space between lines and by a 5 cm line from the left margin. From the second line onward, they must be aligned below the first letter of the first word of the first line.],
   )
 )
 
-==== As ilustrações
+==== Illustrations
 
-Independentemente do tipo de ilustração (quadro, desenho, figura, fotografia, mapa, entre outros), a sua identificação aparece na parte superior, precedida da palavra designativa.
+Regardless of the type of illustration (chart, drawing, figure, photograph, map, etc.), its identification appears at the top, preceded by the designative word.
 
 #quote(block: true)[
-  Após a ilustração, na parte inferior, indicar a fonte consultada (elemento obrigatório, mesmo que seja produção do próprio autor), legenda, notas e outras informações necessárias à sua compreensão (se houver). A ilustração deve ser citada no texto e inserida o mais próximo possível do texto a que se refere. (*NBR14724:2011*)
+  After the illustration, at the bottom, indicate the source consulted (mandatory element, even if it is the author’s own work), caption, notes, and other necessary information for its understanding (if any). The illustration must be cited in the text and placed as close as possible to the corresponding reference in the text. (*NBR14724:2011*)
 ]
 
-==== Equações e fórmulas
+==== Equations and formulas
 
-As equações e fórmulas devem ser destacadas no texto para facilitar a leitura. Para numerá-las, usar algarismos arábicos entre parênteses e alinhados à direita. Pode-se adotar uma entrelinha maior do que a usada no texto (*NBR14724:2011*).
+Equations and formulas must be highlighted in the text to facilitate reading. To number them, use Arabic numerals in parentheses aligned to the right. A line spacing greater than that of the text may be used (*NBR14724:2011*).
 
-Exemplos, @eq:ex1 e @eq:ex2. Observe que o comando `\gls{}` é usado para criar um _hyperlink_ com a definição do símbolo na lista de símbolos.
+Examples, @eq:ex1 and @eq:ex2. Note that the `#gls()` command is used to create a hyperlink to the definition of the symbol in the list of symbols. One could also use `@label` to reference them, like this: @circum. The first time a reference to a symbol, acronym, or abbreviation is made, the long mode is automatically used. After that, they are always referenced by their abbreviations: @circum, but you can still use the long version: @circum:long.
 
-$ #gls("circum", long: false) = 2 #gls("pi", long: false) #gls("radius", long: false) sqrt(gamma) + 10. $ <eq:ex1>
+$ #gls("circum") = 2 #gls("pi", long: false) #gls("radius", long: false) sqrt(gamma) + 10. $ <eq:ex1>
 
 $ #gls("area", long: false) = #gls("pi", long: false) #gls("radius", long: false)^2. $ <eq:ex2>
 
 #noindent[
-  Aqui não há recuo porque o parágrafo não terminou, apenas foi iniciada uma nova frase após a equação. As equações fazem parte do texto, portanto estão sujeitas à pontuação (ponto final, vírgula, etc.).
+  There is no indentation here because the paragraph has not ended; only a new sentence starts after the equation. Equations are part of the text, therefore subject to punctuation (period, comma, etc.).
 ]
 
-===== Exemplo tabela
+===== Table example
 
-De acordo com *ibge1993*, tabela é uma forma não discursiva de apresentar informações em que os números representam a informação central. Ver @tab:ibge.
+According to *ibge1993*, a table is a non-discursive form of presenting information, where numbers represent the core information. See @tab:ibge.
 
 #figure(
   label: "tab:ibge",
-  caption: [Médias concentrações urbanas 2010-2011.],
+  caption: [Average urban concentrations 2010–2011.],
   source: [*ibge2016*],
   table(
     columns: (1.1fr, auto, auto, 1fr, 1fr, 1fr),
 
     table.header(
-      [Média concentração urbana],
-      table.cell(colspan: 2)[População],
-      [Produto Interno Bruto -- PIB (bilhões R\$)],
-      [Número de empresas],
-      [Número de unidades locais]
+      [Average urban concentration],
+      table.cell(colspan: 2)[Population],
+      [Gross Domestic Product — GDP (billions R\$)],
+      [Number of companies],
+      [Number of local units]
     ),
 
-    [*Nome*],
+    [*Name*],
     [*Total*],
-    [*No Brasil*],
+    [*In Brazil*],
     [],
     [],
     [],
 
     [Ji-Paraná (RO)],
-    [116610],
-    [116 610],
-    [1,686],
-    [2 734],
-    [3 082],
+    [116,610],
+    [116,610],
+    [1.686],
+    [2,734],
+    [3,082],
 
     [Parintins (AM)],
-    [102 033],
-    [102 033],
-    [0,675],
+    [102,033],
+    [102,033],
+    [0.675],
     [634],
     [683],
 
     [Boa Vista (RR)],
-    [298 215],
-    [298 215],
-    [4,823],
-    [4 852],
-    [5 187],
+    [298,215],
+    [298,215],
+    [4.823],
+    [4,852],
+    [5,187],
 
     [Bragança (PA)],
-    [113 227],
-    [113 227],
+    [113,227],
+    [113,227],
     [0.452],
     [654],
     [686]

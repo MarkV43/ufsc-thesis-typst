@@ -1,23 +1,23 @@
-#import "@preview/ufscholar:0.1.3": *
+#import "../imports.typ": *
 
-= Demais Seções (Capítulos)
+= Other Sections (Chapters)
 
-*Instruções da Coordenação do @pfc:*
+*Instructions from the @pfc Coordination:*
 
-Uma prática que contribui para uma fluidez melhor do texto é colocar um parágrafo introdutório no início de cada capítulo, descrevendo os assuntos que serão abordados e a relação com o restante do trabalho. Por exemplo, "A Seção 2.1 apresenta ...", "Or resultados obtidos são analisados na Seção 2.2". Pode-se fazer o mesmo no início de seções maiores, explicando para o leitor, em uma ou duas sentenças o que está por vir no texto e por quê. Outra boa prática é, ao final de cada capítulo, fazer a ligação com o capítulo seguinte.
+A practice that contributes to better text flow is to include an introductory paragraph at the beginning of each chapter, describing the topics that will be addressed and their relationship with the rest of the work. For example, “Section 2.1 presents …”, “The results obtained are analyzed in Section 2.2.” The same can be done at the beginning of major sections, explaining to the reader in one or two sentences what is coming next and why. Another good practice is to connect each chapter to the following one at its end.
 
-Figuras, tabelas, quadros e equações devem ser introduzidos e explicados no texto; não se pode simplesmente "jogá-los" no texto, sem referência nem explicação. Por exemplo, escreva: "O circuito projetado é mostrado na Figura 1. O resistor $R_1$ faz o papel de um limitador de corrente, enquanto o capacitor $C_2$ juntamente com o resistor $R_5$ formam um filtro passa-baixa. Este circuito tem a vantagem de ..."
+Figures, tables, charts, and equations must be introduced and explained in the text; they cannot simply be “thrown” into it without reference or explanation. For example, write: “The designed circuit is shown in Figure 1. Resistor $R_1$ acts as a current limiter, while capacitor $C_2$ together with resistor $R_5$ form a low-pass filter. This circuit has the advantage of …”
 
-Com relação às equações, não se faz referência a uma equação que ainda não foi apresentada. Por exemplo, não se escreve: "A relação entre a tensão e a corrente de um resistor é dada pela @eq:errado":
+Regarding equations, one should not refer to an equation that has not yet been presented. For instance, do not write: “The relationship between voltage and current in a resistor is given by @eq:errado”:
 
 $ V = R I. $ <eq:errado>
 
-#noindent[O correto é algo como "A relação entre a tensão e a corrente de um resistor é dada pela Lei de Ohm,]
+#noindent[The correct way is something like “The relationship between voltage and current in a resistor is given by Ohm’s Law,”]
 
 $ V = R I, $ <eq:correto>
 
-#noindent[na qual $V$ é a tensão aplicada no resistor, $R$ é a resistência e $I$ é a corrente elétrica".]
+#noindent[in which $V$ is the voltage applied to the resistor, $R$ is the resistance, and $I$ is the electric current.”]
 
-É importante observar que as equações fazem parte do texto e, assim, frequentemente convém inserir uma vírgula ou ponto ao seu final. Se o parágrafo segue, elimina-se o recuo na próxima linha com o comando `#noindent[...]`. Além disso, se a frase segue, inicia-se a linha com letra minúscula. Veja exemplos na @eq:errado e @eq:correto.
+It is important to note that equations are part of the text and, therefore, it is often appropriate to insert a comma or period at the end. If the paragraph continues, indentation should be removed from the next line using the command `#noindent[...]`. Furthermore, if the sentence continues, the next line should begin with a lowercase letter. See examples in @eq:errado and @eq:correto.
 
-A seguir, encontrase uma equação na linha de texto: $hat(y)(t + k | t) = sum_(i=1)^infinity g_i Delta u(t+k-i | t)$. E eis uma referência cruzada da @fig:elementos-trabalho e da @eq:ex1.
+Below is an equation within a line of text: $hat(y)(t + k | t) = sum_(i=1)^infinity g_i Delta u(t+k-i | t)$. And here is a cross-reference to @fig:elementos-trabalho and @eq:ex1.

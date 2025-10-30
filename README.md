@@ -10,40 +10,24 @@
 Create the cover and few following pages, and configure the document, by writing
 
 ```typst
-#import "@preview/ufscholar:0.1.3": *
+#import "@preview/ufscholar:0.2.0": *
 
 #show: thesis.with(
   title: [Title of the dissertation\ Can be broken into two lines],
-  subtitle: "Complementary subtitle, not more than two lines long",
-  author: "Author's complete name",
-
-  logo: image("your-logo.svg", width: 5em),
-  institution: [
-   Federal University of Santa Catarina\
-   Technology Center\
-   Automation and Systems Engineering\
-   Undergraduate Course in Control and Automation engineering
-  ],
-  contributors: (
-   ("Prof. XXXXXX, Dr.", "Advisor", "UFSC/CTC/DAS"),
-   ("XXXXXX, Eng.", "Supervisor", "Company/University XXXX"),
-   ("Prof. XXXX, Dr.", "Evaluator", "Institution XXXX"),
-   ("Prof. XXXX, Dr.", "Board President", "UFSC/CTC/DAS"),
-   ("Prof. XXXX, Dr.", "Course Coordinator", none),
-  ),
-  cont-in-description: (0, 1),
-  cont-in-board: (0, 1, 2, 3),
-
-  address: ("Florianópolis", "Santa Catarina", "Brazil"),
-  description: [Final report of the subject DAS5511 (Course Final Project) as a Concluding Dissertation of the Undergraduate Course in Control and Automation Engineering of the Federal University of Santa Catarina.],
-  evaluation: [This dissertation was evaluated in the context of the subject DAS5511 (Course Final Project) and approved in its final form by the Undergraduate Course in Control and Automation Engineering],
-
+  subtitle: [Complementary subtitle, not more than two lines long],
+  author: [Author's complete name],
+  address: ([\<City>], [\<State/Province>], [\<Country>]),
+  date: datetime.today(),
   lang: "en",
 )
 ```
 
-You can also write various elements by using their respective names. The supported elements this far are:
+You must also write various elements by using their respective names. The supported elements this far are:
 
+- Cover Page
+- Title Page
+- Catalog Card
+- Examining Board
 - Dedicatory
 - Acknowledgements
 - Epigraph

@@ -1,58 +1,56 @@
-#import "@preview/ufscholar:0.1.3": *
+#import "../imports.typ": *
 
-// #part[Pesquisa]
+#part[Research]
 
-= Introdução
+= Introduction
 
-*Intruções do padrão genérico de @tcc:pl da BU:*
+*Generic standard instructions from the @tcc:pl of the University Library:*
 
-As orientações aqui apresentadas são baseadas em um conjunto de normas elaboradas pela @abnt. Além das normas técnicas, a Biblioteca também elaborou uma série de tutoriais, guias, _templates_ os quais estão disponíveis em seu site, no endereço http://portal.bu.ufsc.br/normalizacao/.
+The guidelines presented here are based on a set of standards developed by the @abnt. In addition to these technical standards, the Library has also prepared a series of tutorials, guides, and templates, all available on its website: http://portal.bu.ufsc.br/normalizacao/.
 
-Paralelamente ao uso deste _template_ recomenda-se quye seja utilizado o *Tutorial de Trabalhos Acadêmicos* (disponível neste link https://repositorio.ufsc.br/handle/123456789/180829).
+Alongside the use of this template, it is recommended to also use the *Tutorial for Academic Papers* (available at https://repositorio.ufsc.br/handle/123456789/180829).
 
-Este _template_ está configurado apenas para a impressão utilizando o anverso das folhas, caso você queira imprimir usando a frente e o verso, acrescente a opção _openright_ e mude de _oneside_ para _twoside_ nas configurações da classe _abntex2_ no início do arquivo principal _main.tex_ (*abntex2classe*).
+This template is configured only for single-sided printing. Printing on both sides is not yet implemented, but is something on the author's roadmap for this template.
 
-Conforme a Resolução NORMATIVA nº 46/2019/CPG as dissertações e teses não serão mais entregues em formato impresso na Biblioteca Universitária. Consulte o Repositório Institucional da UFSC ou sua Secretaria de Pós Graduação sobre os procedimentos para entrega.
+According to Regulatory Resolution No. 46/2019/CPG, dissertations and theses are no longer to be delivered in printed format to the University Library. Check with the UFSC Institutional Repository or your Graduate Program Office for submission procedures.
 
-*Instruções da Coordenação do @pfc:*
+*Instructions from the @pfc Coordination:*
 
-Neste primeiro capítulo é muito importante deixar bem claro (de uma maneira mais resumda, sem entrar em detalhes técnicos, apenas para passar a ideia geral ao leitor):
+In this first chapter, it is very important to make it clear (in a summarized way, without going into technical details, just to give the reader a general idea):
 
-- o problema tratado no @pfc;
-- a importância do problema para a empresa ou instituição em que o @pfc foi realizado;
-- a solução proposta;
-- a metodologia utilizada;
-- os resultados obtidos e a sua importância para a empresa/clientes;
-- o que de fato foi feito pelo autor, diferenciando do que foi aproveitado de trabalhos anteriores/outras equipes da empresa. *Importante*: esta preocupação em diferenciar o trabalho do autor daquele de possíveis colegas em um trabalho em equipe deve permear todo o documento.
+- the problem addressed in the @pfc;
+- the importance of the problem to the company or institution where the @pfc was carried out;
+- the proposed solution;
+- the methodology used;
+- the results obtained and their relevance to the company/clients;
+- what was actually done by the author, distinguishing it from what was reused from previous works or other teams within the company. *Important:* this concern with distinguishing the author’s work from that of possible colleagues in a team project should be present throughout the document.
 
-Apesar de o tamanho da monografia não ter uma correlação direta com a nota, bons trabalhos não costumam ser relatados suficientemente bem com menos de 50 páginas. Acima de 100 páginas a monografia pode se tornar "massante", discorrendo além do necessário para o entendimento do trabalho, portanto perdendo o foco do leitor.
+Although the length of the monograph is not directly correlated with the grade, good works are rarely well reported in fewer than 50 pages. Above 100 pages, the monograph may become tedious, going beyond what is necessary for understanding the work and thus losing the reader’s focus.
 
-A linguagem a ser utilizada em um trabalho acadêmico deve ser técnico-científica, portanto formal (e não informal, como se o trabalho estivesse sendo explicado a um colega ou familiar). Portanto não devem ser usadas gírias. Utilize corretor ortográfico e verifique a gramática (pontuação, uso da vírgula, concordância, coesão textual, etc.).
+The language used in an academic work must be technical and scientific, therefore formal (not informal, as if explaining the work to a friend or relative). Thus, slang should not be used. Use a spell checker and review grammar (punctuation, use of commas, agreement, textual cohesion, etc.).
 
-== Objetivos
+== Objectives
 
-Aqui são descritos os objetivos, que podem ser estratificados em objetivo geral e objetivos específicos.
+Here the objectives are described, which can be divided into a general objective and specific objectives.
 
-Outra opção é colocar os objetivos específicos na forma de passos de uma metodologia de trabalho, ou seja, os procedimentos e ferramentas adotadas em cada fase do projeto (um plano de trabalho).
-
-\
-
-#par(first-line-indent: 0pt)[ESTRUTURA DO DOCUMENTO]
+Another option is to present the specific objectives as steps in a work methodology, that is, the procedures and tools adopted in each phase of the project (a work plan).
 
 \
 
-Ao final do capítulo introdutório, costuma-se descrever como o documento está estruturado (encadeamento dos próximos capítulos). A estruturação sugerida a seguir é em linhas gerais e não precisa ser seguida à risca: dependendo da área e foco do trabalho, o número de capítulos pode variar. O estudante deve consultar seu orientador na UFSC para definir a estrutura do documento.
+#noindent[DOCUMENT STRUCTURE]
 
-No capítulo 2 é feita uma descrição da empresa (instituição de realização do @pfc) e seus processos/produtos.
+\
 
-No capítulo 3 é apresentada uma fundamentação teórica: são discutidas teorias, modelos etc. fundamentais para o entendimento da solução proposta.
+At the end of the introductory chapter, it is customary to describe how the document is structured (the sequence of the following chapters). The suggested structure below is general and does not need to be followed strictly: depending on the area and focus of the work, the number of chapters may vary. The student should consult their advisor at UFSC to define the document’s structure.
 
-No capítulo 4 são expostos os requisitos gerais, funcionais e não-funcionais, a serem considerados no projeto. Também podem ser utilizados fluxos de informação e materiais, diagramas etc., para delinear os resultados que a solução proposta deve atingir. Aqui pode ser elaborado um modelo da planta acompanhado de identificação, por exemplo.
+Chapter 2 provides a description of the company (institution where the @pfc was carried out) and its processes/products.
 
-No capítulo 5 é descrito em detalhes o projeto (hardware, software) feito. Para isto a solução é formalizada por meio de diagramas, casos de uso, interfaces gráficas, projeto de controladores. as decisões que foram tomadas e o seu porquê, em alinhamento com os requisitos colocados. Na área de controle, aqui pode ser feito o
-projeto do controlador.
+Chapter 3 presents the theoretical foundation: theories, models, etc. essential for understanding the proposed solution are discussed.
 
-No capítulo 6 é feita uma análise de resultados: vantagens e desvantagens, impactos dos resultados nos processos da empresa. Para isto devem ser utilizados indicadores, gráficos, estatísticas etc.
+Chapter 4 sets out the general, functional, and non-functional requirements to be considered in the project. Information and material flows, diagrams, etc. can also be used to outline the expected results of the proposed solution. A model of the plant, for instance, may be developed and identified here.
 
-No último capítulo é feita uma conclusão do @pfc. Ela compreende um resumo
-do que foi feito, retomando a motivação do trabalho, a solução proposta e os principais resultados atingidos. Também deve ser feita uma análise das limitações do projeto, e apontadas possíveis melhorias caso o trabalho venha a ser continuado (sugestão de trabalhos futuros).
+Chapter 5 describes in detail the project (hardware, software) that was carried out. The solution is formalized through diagrams, use cases, graphical interfaces, and controller design, including the decisions made and their rationale, in alignment with the defined requirements. In control-related projects, this is where the controller design is presented.
+
+Chapter 6 provides an analysis of results: advantages and disadvantages, and the impact of the results on the company’s processes. Indicators, charts, statistics, etc. should be used for this analysis.
+
+The final chapter presents the conclusion of the @pfc. It includes a summary of what was done, revisiting the motivation of the work, the proposed solution, and the main results achieved. It should also analyze the project’s limitations and point out possible improvements in case the work is to be continued (suggestions for future work).
